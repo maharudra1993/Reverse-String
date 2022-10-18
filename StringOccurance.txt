@@ -1,0 +1,27 @@
+package com.practice;
+
+import java.util.HashMap;
+
+public class StringOccurance {
+
+	public static void main(String[] args) {
+		String s = "maharudrabharati";
+		char ch[] = s.toCharArray();
+		
+		HashMap<Character, Integer> map = new HashMap<>();
+		int count = 0;
+		for(int i=0; i<ch.length; i++) {
+			for(int j=0; j<ch.length; j++) {
+				if(ch[i]==ch[j]) {
+					count++;
+				}
+			}
+			if(count>1) {
+				map.put(ch[i],count);
+			}
+			count=0;
+		}
+		System.out.println(map);
+		
+	}
+}
